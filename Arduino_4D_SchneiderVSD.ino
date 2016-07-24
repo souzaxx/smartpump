@@ -73,7 +73,20 @@ unsigned int readMotorTemperatureVSD[1];
 unsigned int writeControlWordVSD[1];
 unsigned int writeUserSetSpeedVSD[1]={0};
 
+///////4D DISPLAY READ VALUES///////
+unsigned int enableButton;
+unsigned int fwdButton;
+unsigned int revButton;
+unsigned int resetButton;
+unsigned int estopButton;
+unsigned int usersetspeedSlider;
 
+//////4D DISPLAY WRITE VALUES///////
+unsigned int actualSpeed;
+unsigned int actualCurrent;
+unsigned int actualVoltage;
+unsigned int actualFrequency;
+unsigned int actualTemp;
 
 // High or Low variables as arrays (Not used)
 unsigned int writeHigh[1]={1};
