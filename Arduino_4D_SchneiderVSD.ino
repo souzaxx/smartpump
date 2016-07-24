@@ -9,8 +9,8 @@
 // The last official update to this code was made on 10/01/2014.
 
 
-#include <SimpleModbusMaster.h>
-#include <TimerOne.h>
+#include "SimpleModbusMaster.h"
+#include "TimerOne.h"
 #include <SoftwareSerial.h>
 
 //////////////////// Port information ///////////////////
@@ -134,7 +134,7 @@ void loop() {
 }
 
 void update_ALL() {
-  while(!Serial1.available()) {// ONLY update the Modbus (Which is on Serial2) if there is no data coming from the 4D Systems display on Serial 1.
+  while(!Serial.available()) { // ONLY update the Modbus (Which is on Serial2) if there is no data coming from the website with will be Serial
     modbus_update();           // Polls all of the registers on Modbus slave with address 2 (The Schneider VSD). The address is set under SETUP(). Reads from the VSD and writes to the VSD.
   }
   update_display();            // Writes and reads required data to and from the objects on the 4D Systems display.
